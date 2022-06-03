@@ -1,32 +1,47 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+		<header-up>
+			<template
+				v-slot:logout
+				v-if="this.$router.currentRoute.name === 'todo'"
+			>
+        <button class="logout" @click="logout">Logout</button>
+      </template>
+		</header-up>
+		<main class="main">
+			<router-view />
+		</main>
+		<footer-up />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import HeaderUp from '@/components/HeaderUp.vue'
+import FooterUp from '@/components/FooterUp.vue'
+
+export default {
+	components: {
+    HeaderUp,
+		FooterUp,
+  },
+	methods: {
+		logout() {
+			localStorage.removeItem('user-info');
+			this.$router.push({ path: 'login' })
+		}
+	}
 }
+</script>
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+<style lang="scss">
+// @import '@/assets/styles/style.scss';
+#app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	overflow: hidden;
+}
+.main {
+	flex: 1 1 auto;
 }
 </style>
