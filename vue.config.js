@@ -1,7 +1,7 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
-	publicPath: process.env.NODE_ENV === "production" ? "/fe-21-01/max/training/test-task" : "/",
+	publicPath: process.env.NODE_ENV === "production" ? "/test-task" : "/",
 	css: {
 		loaderOptions: {
 			sass: {
