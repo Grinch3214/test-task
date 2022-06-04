@@ -14,7 +14,7 @@
 				v-model="username"
 			>
 			<p class="form__error">
-				<span :class="{ 'error': errorUser }">Enter a valid name</span>
+				<span :class="{ 'error': errorUser }">This user does not exist</span>
 			</p>
 		</div>
 		<div class="form__input">
@@ -27,7 +27,7 @@
 				v-model="password"
 			>
 			<p class="form__error">
-				<span :class="{ 'error': errorPass }">Enter a valid password</span>
+				<span :class="{ 'error': errorPass }">Incorrect password</span>
 			</p>
 		</div>
 		<button-up
@@ -65,7 +65,7 @@ export default {
 		async submitForm() {
 			this.preload = true;
 			try {
-				let result = await axios.get('https://sheetdb.io/api/v1/hoanq94287jgw');
+				let result = await axios.get('https://sheetdb.io/api/v1/ugov8pg8e4pkc');
 				if (result.request.readyState === 4) {
 					this.preload = false;
 				}
