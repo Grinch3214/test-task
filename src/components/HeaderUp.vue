@@ -24,22 +24,44 @@ export default {
  background: $primary-color;
  &__top {
 	background: $gradient-color;
-	margin: 53px 0 0 0;
+	margin: 0;
+	@media (min-width: 575.98px) {
+		margin: 20px 0 0 0;
+	}
+	@media (min-width: 767.98px) {
+		margin: 35px 0 0 0;
+	}
+	@media (min-width: 1199.98px) {
+		margin: 53px 0 0 0;
+	}
  }
 }
 
 .head {
 	&-left {
-		height: 96px;
+		height: 55px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		@media (min-width: 767.98px) {
+			height: 75px;
+		}
+		@media (min-width: 1199.98px) {
+			height: 96px;
+		}
 	}
 	&-left__logo {
-		max-width: 103px;
+		max-width: 50px;
 		display: inline-block;
+		@media (min-width: 767.98px) {
+			max-width: 75px;
+		}
+		@media (min-width: 1199.98px) {
+			max-width: 103px;
+		}
 		img {
 			width: 100%;
+			height: auto;
 		}
 	}
 }

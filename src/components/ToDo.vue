@@ -7,6 +7,7 @@
         type="text"
         placeholder="Enter To Do"
         class="todos__form-input"
+				@keyup.enter="addTodo()"
       />
       <button
 				type="submit"
@@ -65,22 +66,13 @@ export default {
     tempNameTodo: '',
     tempStatusTodo: '',
     todoStatus: ["to-do", "waiting", "finished"],
-    todos: [
-      // {
-      //   name: "Task number one",
-      //   status: "to-do",
-      // },
-      // {
-      //   name: "Task number two",
-      //   status: "finished",
-      // },
-      // {
-      //   name: "Task nomber three",
-      //   status: "waiting",
-      // },
-    ],
+    todos: [],
 	}),
 	methods: {
+		addTodoListToLocalStorage() {
+			let todo = JSON.stringify(this.todos)
+			localStorage.setItem('to-do-list', todo)
+		},
 		addTodo() {
 			if (!this.newTodo.length) return;
 
@@ -94,30 +86,22 @@ export default {
         this.indexEditTodo = null;
 			}
 			this.newTodo = ''
-
-			let todo = JSON.stringify(this.todos)
-			localStorage.setItem('to-do-list', todo)
+			this.addTodoListToLocalStorage()
 		},
 		editTodo(index) {
       this.newTodo = this.todos[index].name;
       this.indexEditTodo = index;
-
-			let todo = JSON.stringify(this.todos)
-			localStorage.setItem('to-do-list', todo)
+			this.addTodoListToLocalStorage()
     },
 		deleteTodo(index) {
       this.todos.splice(index, 1);
-
-			let todo = JSON.stringify(this.todos)
-			localStorage.setItem('to-do-list', todo)
+			this.addTodoListToLocalStorage()
     },
 		changeStatus(index) {
       let statusIndex = this.todoStatus.indexOf(this.todos[index].status);
       if (++statusIndex > 2) statusIndex = 0;
       this.todos[index].status = this.todoStatus[statusIndex];
-
-			let todo = JSON.stringify(this.todos)
-			localStorage.setItem('to-do-list', todo)
+			this.addTodoListToLocalStorage()
     },
 		upTodo(index) {
       if (index === 0) return;
@@ -154,9 +138,12 @@ export default {
 
 <style lang="scss">
 .todos {
-	padding: 40px;
+	padding: 15px;
 	max-width: 800px;
 	margin: 0 auto;
+	@media (min-width: 575.98px) {
+		padding: 40px;
+	}
 
 	&__form {
 		display: flex;
@@ -199,6 +186,8 @@ export default {
 		position: relative;
 		font-weight: 700;
 		padding-left: 12px;
+		cursor: pointer;
+		font-size: 16px;
 	}
 
 	&__item {
@@ -233,7 +222,7 @@ export default {
 		&::before {
 			content: '';
 			position: absolute;
-			top: 10px;
+			top: 9px;
 			left: 0;
 			width: 6px;
 			height: 6px;

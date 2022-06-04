@@ -73,8 +73,12 @@ h1, h2, h3, h4, h5, h6 {
 html, body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	font-size: 16px;
-	line-height: 25px;
+	font-size: 14px;
+	line-height: 22px;
+	@media (min-width: 991.98px) {
+		font-size: 16px;
+		line-height: 25px;
+	}
 }
 
 $primary-color: #333333;

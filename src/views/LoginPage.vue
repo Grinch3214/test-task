@@ -49,32 +49,59 @@ export default {
 			}
 		],
 	}),
-	methods: {
-  }
 }
 </script>
 
 <style lang="scss">
 .business {
-	
+	padding-bottom: 20px;
 	&__top {
 		background: url('../assets/images/background.jpg') 0 0/cover no-repeat;
-		min-height: 457px;
+		min-height: 330px;
 		display: flex;  
-		align-items: flex-end;
-		padding-bottom: 70px;
+		align-items: center;
+		padding-bottom: 0px;
 		color: #fff;
+		@media (min-width: 991.98px) {
+			min-height: 400px;
+			padding-bottom: 70px;
+			align-items: flex-end;
+		}
+		@media (min-width: 1199.98px) {
+			min-height: 457px;
+		}
 	}
 	&__title {
-		font-size: 55px;
-		line-height: 86px;
+		font-size: 30px;
+		line-height: 40px;
+		text-align: center;
+		@media (min-width: 575.98px) {
+			font-size: 40px;
+			line-height: 55px;
+			text-align: left;
+		}
+		@media (min-width: 1199.98px) {
+			font-size: 55px;
+			line-height: 86px;
+		}
 	}
 }
 
 .analitics {
 	display: flex;
+	flex-wrap: wrap;
+	@media (min-width: 767.98px) {
+		flex-wrap: nowrap;	
+	}
 	&__container {
-		flex: 1 1 50%;
+		flex: 1 1 100%;
+		padding-right: 0px;
+		order: 2;
+		@media (min-width: 767.98px) {
+			flex: 1 1 50%;
+			padding-right: 10px;
+			order: 1;
+		}
 	}
 	&__container-txt {
 		margin-top: 40px;
@@ -86,31 +113,48 @@ export default {
 		margin-top: 15px;
 	}
 	&__item {
-		padding-left: 36px;
+		padding-left: 26px;
 		margin-bottom: 15px;
 		position: relative;
+		@media (min-width: 991.98px) {
+			padding-left: 36px;
+		}
 		&::before {
 			content: '';
 			position: absolute;
 			top: 4px;
 			left: 0;
-			width: 23px;
-			height: 17px;
-			background: url('../assets/images/check_list.svg');
+			width: 16px;
+			height: 11px;
+			background: url('../assets/images/check_list.svg') 0 0/cover no-repeat;
+			@media (min-width: 991.98px) {
+				width: 23px;
+				height: 17px;
+			}
 		}
 	}
 	&__item-title {
 		font-weight: 500;
+		margin-bottom: 0;
+		@media (min-width: 767.98px) {
+			margin-bottom: 10px;
+		}
 	}
 	&__item-text {
 		font-size: 14px;
 	}
 
 	&__form {
-		flex: 1 1 50%;
-		text-align: right;
+		flex: 1 1 100%;
+		text-align: center;
+		order: 1;
+		margin-top: 28px;
+		@media (min-width: 767.98px) {
+			flex: 1 1 50%;
+			text-align: right;
+			order: 2;
+			margin-top: 0;
+		}
 	}
 }
-
-
 </style>

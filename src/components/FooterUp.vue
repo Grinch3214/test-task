@@ -63,21 +63,60 @@ export default {
 	font-weight: 500;
 		&__container {
 			display: flex;
+			flex-wrap: wrap;
 			align-items: center;
-			justify-content: space-between;
-			padding: 20px 0;
+			justify-content: center;
+			padding: 0;
 			border-bottom: 1px solid #fff;
+			@media (min-width: 575.98px) {
+				padding: 20px 0;
+			}
+			@media (min-width: 767.98px) {
+				flex-wrap: nowrap;
+				justify-content: space-between;
+			}
 		}
 
 		&__logo {
+			margin-bottom: 20px;
+			margin-top: 20px;
+			text-align: center;
+			flex: 1 1 100%;
+			@media (min-width: 767.98px) {
+				text-align: left;
+				margin: 0;
+				flex: 1 1 auto;
+			}
 		}
 
 		&__list {
 			display: flex;
+			font-size: 14px;
+			flex-wrap: wrap;
+			text-align: center;
+			@media (min-width: 575.98px) {
+				font-size: 12px;
+				text-align: left;
+			}
+			@media (min-width: 767.98px) {
+				font-size: 14px;
+			}
+			@media (min-width: 991.98px) {
+				font-size: 16px;
+			}
 		}
 
 		&__item {
-			margin-left: 20px;
+			margin-left: 0;
+			flex: 1 1 100%;
+			margin-bottom: 10px;
+			&:first-child {
+				margin-left: 0;
+			}
+			@media (min-width: 575.98px) {
+				flex: 1 1 auto;
+				margin-left: 20px;
+			}
 		}
 
 		&__link {
@@ -89,7 +128,17 @@ export default {
 		}
 
 		&__copyright {
-			padding: 30px 0;
+			padding: 20px 0;
+			font-size: 13px;
+			text-align: center;
+			@media (min-width: 767.98px) {
+				padding: 30px 0;
+				font-size: 14px;
+				text-align: left;
+			}
+			@media (min-width: 991.98px) {
+				font-size: 16px;
+			}
 		}
 }
 </style>

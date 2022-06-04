@@ -41,11 +41,20 @@ export default {
 	padding-bottom: 120px;
 	
 	&__title {
-		max-width: 186px;
-		padding: 65px 0;
+		max-width: 115px;
+		padding: 20px 0;
 		margin: 0 auto;
+		@media (min-width: 767.98px) {
+			max-width: 145px;
+			padding: 35px 0;
+		}
+		@media (min-width: 1199.98px) {
+			max-width: 186px;
+			padding: 65px 0;
+		}
 		img {
 			width: 100%;
+			height: auto;
 		}
 	}
 
@@ -55,9 +64,22 @@ export default {
 	}
 	&__name {
 		font-weight: 700;
-		font-size: 60px;
-		line-height: 94px;
-		padding: 32px 0;
+		font-size: 26px;
+		line-height: 25px;
+		padding: 25px 0;
+		@media (min-width: 575.98px) {
+			font-size: 36px;
+			line-height: 35px;
+			padding: 32px 0;
+		}
+		@media (min-width: 767.98px) {
+			font-size: 45px;
+			line-height: 52px;
+		}
+		@media (min-width: 1199.98px) {
+			font-size: 60px;
+			line-height: 94px;
+		}
 	}
 }
 
