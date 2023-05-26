@@ -9,13 +9,12 @@ https://grinch3214.github.io/test-task/login
 
 ## Preview
 
-<img src="https://github.com/Grinch3214/test-task/blob/master/screenshots/Screenshot_1.png" width=200 heigth=200 />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/Grinch3214/test-task/blob/master/screenshots/Screenshot_1.png" width=600 />
 
-![Screenshot_1](https://github.com/Grinch3214/test-task/blob/master/screenshots/Screenshot_1.png)
+<img src="https://github.com/Grinch3214/test-task/blob/master/screenshots/Screenshot_2.png" width=600 />
 
-![Screenshot_2](https://github.com/Grinch3214/test-task/blob/master/screenshots/Screenshot_2.png)
+<img src="https://github.com/Grinch3214/test-task/blob/master/screenshots/Screenshot_3.png" width=600 />
 
-![Screenshot_3](https://github.com/Grinch3214/test-task/blob/master/screenshots/Screenshot_3.png)
 
 ## Technologies used
 
