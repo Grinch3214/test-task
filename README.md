@@ -1,4 +1,4 @@
-# test-task
+# Front-end Test Task
 
 ## Project setup
 ```
