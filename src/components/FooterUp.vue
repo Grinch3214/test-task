@@ -16,7 +16,7 @@
 				</ul>
 			</div>
 			<div class="footer__copyright">
-				Copyright © 2020 Citigroup Inc. Citibank, N.A. Member FDIC. Equal Opportunity Lender.
+				{{ footer }}
 			</div>
 		</div>
   </footer>
@@ -26,6 +26,7 @@
 export default {
   name: 'FooterUp',
 	data:() => ({
+		footer: 'Copyright © 2020 Citigroup Inc. Citibank, N.A. Member FDIC. Equal Opportunity Lender.',
 		itemList: [
 			{
 				txt: 'Terms & Conditions',
